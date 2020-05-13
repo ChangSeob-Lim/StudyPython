@@ -33,6 +33,22 @@ dictionary = {
     "origin" : "필리핀"
 }
 
-price = dictionary.get("price")
+value = dictionary.get("price")
 # 여러 작업이 존재
-print("값:", price)
+print("값:", value)
+
+dictionary["price"] = 5000
+dictionary["name"] = "8D 건조 파인애플"
+
+if value == None:
+    print("에러가 났습니다.")
+
+for key in dictionary:
+    # 출력
+    atom = dictionary.get(key)
+    if type(atom) == list:
+        print("{} list 값 :".format(key))
+        for item in atom:
+            print(item)
+    else:
+        print("{}:".format(key), atom)
