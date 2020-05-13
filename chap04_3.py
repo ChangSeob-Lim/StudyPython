@@ -10,6 +10,7 @@
 #     print(i, "= 반복변수")
 # print()
 
+
 # array = [11, 22, 33, 44, 55, 66]
 
 # for i in range(len(array)):
@@ -20,8 +21,10 @@
 #     print(i)
 # print()
 
+
 # while True:
 #     print(".", end="")
+
 
 # i = 0
 # while True:
@@ -31,6 +34,7 @@
 #     if input_text in ["y", "Y"]:
 #         print("반복을 종료합니다.")
 #         break
+
 
 numbers = [5, 15, 6, 20, 7, 25]
 
