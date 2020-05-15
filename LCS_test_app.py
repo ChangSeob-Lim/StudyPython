@@ -39,15 +39,19 @@ avr = 0.0
 
 for movie in dic_mcu:
   if movie.get('박스오피스') > 450000000:
+    for item in list_pd:
+      if item == movie['감독']:
+        list_pd.remove(movie['감독'])
     list_pd.append(movie['감독'])
     sum += movie['박스오피스']
     count += 1
 
 avr = sum / count
 
-pd = set(list_pd)
+# pd = set(list_pd)
 
 print("감독 리스트 :")
-print(list(pd))
+# print(list(pd))
+print(list_pd)
 print("총 박스오피스 합계 $", format(sum, ',d'))
 print("평균 박스오피스 $", format(int(avr), ',d'))
