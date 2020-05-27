@@ -11,7 +11,7 @@ class MyApp(QMainWindow):
 
     def initUI(self):
         # 메뉴바 안에 들어가는 항목
-        exitAction = QAction(QIcon('./data/exit.png'), 'Exit', self) #리눅스 상에서 아이콘 안나옴
+        exitAction = QAction(QIcon('exit.png'), 'Exit', self) #리눅스 상에서 아이콘 안나옴
         exitAction.setShortcut('Ctrl+Q')
         exitAction.setStatusTip('Exit Application')
         exitAction.triggered.connect(self.btn_clicked)
@@ -30,7 +30,7 @@ class MyApp(QMainWindow):
 
         # 윈폼 만들기
         self.setWindowTitle('My Qt App')
-        self.setWindowIcon(QIcon('./data/box.png'))
+        self.setWindowIcon(QIcon('box.png'))
         #self.move(200, 200)
         #self.resize(640, 400)
         self.setGeometry(100, 100, 640, 400)
