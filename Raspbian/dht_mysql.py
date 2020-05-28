@@ -8,9 +8,11 @@ sensor = dht.DHT11
 pin = 4
 print('Reading Temperature&Humidity')
 # DB저장
+
 try:
     conn = pymysql.connect(host='210.119.12.52', user='test_usr', password='mysql_p@ssw0rd', \
                          db='shopdb', charset='utf8')
+                         
     while True:
         wtime = datetime.datetime.now()
         humid, temp = dht.read_retry(sensor, pin)
