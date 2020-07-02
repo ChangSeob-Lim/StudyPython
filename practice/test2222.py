@@ -25,8 +25,7 @@ bus = smbus2.SMBus(port)
 bme280.load_calibration_params(bus, address)
 
 try:
-    conn = pymysql.connect(host='192.168.0.22', user='root', password='mysql_p@ssw0rd', \
-                         db='testdb', charset='utf8')
+    print('play')
     while True:
         try:
             if read_ser.in_waiting != 0:
@@ -51,18 +50,9 @@ try:
             h = data.humidity
             p = data.pressure
             print('Temp = {0:0.1f}C Humid = {1:0.1f}% Pressure = {2:0.1f}'.format(t, h, p))
-            curs = conn.cursor()
-            query = "INSERT INTO testdb.test_tb (id, time, temp, humid) \
-                 VALUES (%s, %s, %s, %s)"
-            data = ('1', wtime.strftime("%Y-%m-%d %H:%M:%S"), t, h)
-            curs.execute(query, data)
-            conn.commit()
-            time.sleep(10)
+            time.sleep(1)
         except Exception as e:
-            print('play error', e)
+            print(e)
 
 except Exception as e:
     print('DB', e)
-finally:
-    curs.close()
-    conn.close()
